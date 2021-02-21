@@ -4,32 +4,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kruecklde/RobotExpressive.glb"
   },
   {
-    "revision": "ad73eff591561a91b070",
-    "url": "/kruecklde/css/app.7187d6f2.css"
+    "revision": "48f68b514a08f4655de8",
+    "url": "/kruecklde/css/app.6537607f.css"
   },
   {
-    "revision": "ba7ba83e296176c1306a",
-    "url": "/kruecklde/css/chunk-vendors.0a80d5ed.css"
+    "revision": "c9f62372c124a197453b",
+    "url": "/kruecklde/css/chunk-vendors.5aff1005.css"
   },
   {
     "revision": "82b9c7a5a3f405032b1db71a25f67021",
     "url": "/kruecklde/img/logo.82b9c7a5.png"
   },
   {
-    "revision": "2f629bf5d0ab9e84fbc8b9619a0ee538",
+    "revision": "88f91a6b70b137e6252c79ca925c2695",
     "url": "/kruecklde/index.html"
   },
   {
-    "revision": "9c3cb21048c938a7b8dd",
-    "url": "/kruecklde/js/about.654ce922.js"
+    "revision": "562531afc33cc8c35d62",
+    "url": "/kruecklde/js/about.be288a77.js"
   },
   {
-    "revision": "ad73eff591561a91b070",
-    "url": "/kruecklde/js/app.c3f163bf.js"
+    "revision": "48f68b514a08f4655de8",
+    "url": "/kruecklde/js/app.60a5192c.js"
   },
   {
-    "revision": "ba7ba83e296176c1306a",
-    "url": "/kruecklde/js/chunk-vendors.b7b9f47d.js"
+    "revision": "c9f62372c124a197453b",
+    "url": "/kruecklde/js/chunk-vendors.f7b6f586.js"
   },
   {
     "revision": "137ad27bd3c15f7ade2a92240225dd13",
