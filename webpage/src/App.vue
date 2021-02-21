@@ -5,7 +5,7 @@
     <NavBar @toggle-drawer="$refs.navDrawer.toggle()"></NavBar>
 
     <v-main style="position: relative;">
-      <animated-background-two />
+      <animated-background/>
       <v-container fluid id="main-container" style="position: absolute; top:0">
         <v-row justify="center">
           <v-col align="center" :style="{'max-width': $vuetify.breakpoint.thresholds.md + 'px'}">
@@ -26,7 +26,6 @@ import NavDrawer from "./components/NavDrawer.vue";
 import NavBar from "./components/NavBar.vue";
 import Footer from "./components/Footer.vue";
 import AnimatedBackground from "./components/AnimatedBackground.vue";
-import AnimatedBackgroundTwo from "./components/AnimatedBackgroundTwo.vue";
 @Component({
   name: "App",
   components: {
@@ -34,8 +33,7 @@ import AnimatedBackgroundTwo from "./components/AnimatedBackgroundTwo.vue";
     NavDrawer,
     NavBar,
     Footer,
-    AnimatedBackground,
-    AnimatedBackgroundTwo
+    AnimatedBackground
   },
 })
 export default class App extends Vue {}
