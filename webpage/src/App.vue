@@ -4,8 +4,9 @@
     <NavDrawer ref="navDrawer"></NavDrawer>
     <NavBar @toggle-drawer="$refs.navDrawer.toggle()"></NavBar>
 
-    <v-main>
-      <v-container fluid>
+    <v-main style="position: relative;">
+      <animated-background-two />
+      <v-container fluid id="main-container" style="position: absolute; top:0">
         <v-row justify="center">
           <v-col align="center" :style="{'max-width': $vuetify.breakpoint.thresholds.md + 'px'}">
             <router-view />
@@ -24,15 +25,33 @@ import LoadingOverlay from "./components/LoadingOverlay.vue";
 import NavDrawer from "./components/NavDrawer.vue";
 import NavBar from "./components/NavBar.vue";
 import Footer from "./components/Footer.vue";
+import AnimatedBackground from "./components/AnimatedBackground.vue";
+import AnimatedBackgroundTwo from "./components/AnimatedBackgroundTwo.vue";
 @Component({
   name: "App",
   components: {
     LoadingOverlay,
     NavDrawer,
     NavBar,
-    Footer
+    Footer,
+    AnimatedBackground,
+    AnimatedBackgroundTwo
   },
 })
 export default class App extends Vue {}
 </script>
+
+<style>
+.v-application {
+  background-color: var(--v-background-base) !important;
+}
+.v-navigation-drawer {
+  background-color: var(--v-drawerbackground-base) !important;
+}
+.v-card {
+  background-color: var(--v-cardbackground-base) !important;
+}
+
+
+</style>
 
