@@ -4,11 +4,14 @@
     <NavDrawer ref="navDrawer"></NavDrawer>
     <NavBar @toggle-drawer="$refs.navDrawer.toggle()"></NavBar>
 
-    <v-main style="position: relative;">
-      <animated-background/>
-      <v-container fluid id="main-container" style="position: absolute; top:0">
+    <v-main style="position: relative">
+      <animated-background />
+      <v-container fluid id="main-container" style="position: absolute; top: 0">
         <v-row justify="center">
-          <v-col align="center" :style="{'max-width': $vuetify.breakpoint.thresholds.md + 'px'}">
+          <v-col
+            align="center"
+            :style="{ 'max-width': $vuetify.breakpoint.thresholds.md + 'px' }"
+          >
             <router-view />
           </v-col>
         </v-row>
@@ -33,10 +36,14 @@ import AnimatedBackground from "./components/AnimatedBackground.vue";
     NavDrawer,
     NavBar,
     Footer,
-    AnimatedBackground
+    AnimatedBackground,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  public mounted() {
+    window.scrollTo(0, 0);
+  }
+}
 </script>
 
 <style>
@@ -49,7 +56,5 @@ export default class App extends Vue {}
 .v-card {
   background-color: var(--v-cardbackground-base) !important;
 }
-
-
 </style>
 

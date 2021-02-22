@@ -26,21 +26,39 @@ export default class AnimatedBackground extends Vue {
     this.fsm = new StateMachine({
       init: "idle",
       transitions: [
-        { name: "idle", from: "run", to: "idle" },
+        { name: "idle", from: "walk", to: "idle" },
         { name: "walk", from: "idle", to: "walk" },
       ],
       methods: {
         onIdle: () => {
-          console.log("start idle");
-          console.log(this.animations);
-          if ("Idle" in this.animations) this.animations["Idle"].play();
+          if ("Idle" in this.animations && "Walking" in this.animations) {
+            this.animations["Idle"].stop();
+            this.animations["Walking"].crossFadeTo(this.animations["Idle"], 1.0, true).play();
+            
+          }
         },
         onWalk: () => {
-          console.log("start Walk");
-          if ("Walking" in this.animations) this.animations["Walking"].play();
+          if ("Idle" in this.animations && "Walking" in this.animations) {
+            this.animations["Walking"].stop();
+           this.animations["Idle"].crossFadeTo(this.animations["Walking"], 1.0, true).play();
+      
+          }
         },
       },
     });
+  }
+  private invRate: { [index: string]: number } = {
+    walk: 200,
+    idle: 500,
+  };
+  private chooseEvent(events: string[]) {
+    let res = "";
+    events.forEach((e) => {
+      if (Math.floor(Math.random() * Math.floor(this.invRate[e])) == 0) {
+        res = e;
+      }
+    });
+    return res;
   }
 
   public animations: { [index: string]: Three.AnimationAction } = {};
@@ -65,7 +83,7 @@ export default class AnimatedBackground extends Vue {
 
   private updateBackground() {
     if (this.$vuetify.theme.dark) {
-      this.scene.background = new Three.Color(0x21272c);
+      this.scene.background = new Three.Color(0x171c19);
       this.scene.fog = new Three.Fog(0x111111, 20, 170);
       this.ground.material = new Three.MeshPhongMaterial({
         color: 0x333333,
@@ -117,9 +135,12 @@ export default class AnimatedBackground extends Vue {
     // }
 
     if (this.fsm) {
-      const t = this.fsm.transitions;
-
-      //this.fsm.walk();
+      //console.log(this.fsm.state);
+      const t = this.fsm.transitions();
+      const newev = this.chooseEvent(t);
+      if (newev !== "") {
+        this.fsm[newev]();
+      }
     }
     if (this.camera) {
       this.renderer.render(this.scene, this.camera);
@@ -186,7 +207,7 @@ export default class AnimatedBackground extends Vue {
           if (action) this.animations[a.name] = action;
         });
 
-        console.log(this.animations);
+        //console.log(this.animations);
 
         // Play all animations
         // for (const key in this.animations) {
@@ -208,8 +229,6 @@ export default class AnimatedBackground extends Vue {
 
     if (this.resizeObserver && this.container && this.container.parentElement)
       this.resizeObserver.observe(this.container?.parentElement);
-
-    
   }
 
   /**
