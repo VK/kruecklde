@@ -56,5 +56,18 @@ export default class App extends Vue {
 .v-card {
   background-color: var(--v-cardbackground-base) !important;
 }
+
+html {
+  overflow: hidden;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
 </style>
 
