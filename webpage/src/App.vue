@@ -44,7 +44,7 @@ export default class App extends Vue {
     for (let i = 1; i < 10; i++)
       setTimeout(() => {
         window.scrollTo(0, 10);
-      }, 100*i);
+      }, 100 * i);
   }
 }
 </script>
@@ -60,5 +60,15 @@ export default class App extends Vue {
   background-color: var(--v-cardbackground-base) !important;
 }
 
+html {
+  z-index: 0;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+body {
+  overflow-y: auto;
+}
 </style>
 
