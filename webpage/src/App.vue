@@ -60,15 +60,7 @@ export default class App extends Vue {
 }
 
 html {
-  overflow: hidden;
-  width: 100%;
-}
-
-body {
-  height: 100%;
-  position: fixed;
   overflow-y: auto;
-  width: 100%;
 }
 </style>
 
