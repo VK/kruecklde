@@ -41,9 +41,10 @@ import AnimatedBackground from "./components/AnimatedBackground.vue";
 })
 export default class App extends Vue {
   public mounted() {
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100);
+    for (let i = 1; i < 10; i++)
+      setTimeout(() => {
+        window.scrollTo(0, 10);
+      }, 100*i);
   }
 }
 </script>
@@ -59,8 +60,5 @@ export default class App extends Vue {
   background-color: var(--v-cardbackground-base) !important;
 }
 
-html {
-  overflow-y: auto;
-}
 </style>
 
