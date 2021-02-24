@@ -4,8 +4,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kruecklde/RobotExpressive.glb"
   },
   {
-    "revision": "fdfafddcb991de064059",
-    "url": "/kruecklde/css/app.788c72cb.css"
+    "revision": "fef025885fd903a8f453",
+    "url": "/kruecklde/css/app.6573b5b5.css"
   },
   {
     "revision": "305e0d9046496f45e839",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kruecklde/img/logo.82b9c7a5.png"
   },
   {
-    "revision": "fde443e557efa28e31ac396b937a7c46",
+    "revision": "411407dd447db3547b0ec5d12b2eb480",
     "url": "/kruecklde/index.html"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kruecklde/js/about.be288a77.js"
   },
   {
-    "revision": "fdfafddcb991de064059",
-    "url": "/kruecklde/js/app.e33ee588.js"
+    "revision": "fef025885fd903a8f453",
+    "url": "/kruecklde/js/app.5857f2b2.js"
   },
   {
     "revision": "305e0d9046496f45e839",
