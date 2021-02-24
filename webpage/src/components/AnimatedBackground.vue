@@ -253,5 +253,6 @@ export default class AnimatedBackground extends Vue {
 <style>
 #animated-background {
   position: fixed;
+  bottom: 30px; 
 }
 </style>
