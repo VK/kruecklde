@@ -41,7 +41,9 @@ import AnimatedBackground from "./components/AnimatedBackground.vue";
 })
 export default class App extends Vue {
   public mounted() {
-    window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
   }
 }
 </script>
@@ -65,8 +67,7 @@ html {
 body {
   height: 100%;
   position: fixed;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
   width: 100%;
 }
 </style>
