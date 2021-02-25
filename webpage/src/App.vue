@@ -6,16 +6,19 @@
 
     <v-main style="position: relative">
       <animated-background />
-      <v-container fluid id="main-container" style="position: absolute; top: 0">
-        <v-row justify="center">
-          <v-col
-            align="center"
-            :style="{ 'max-width': $vuetify.breakpoint.thresholds.md + 'px' }"
-          >
-            <router-view />
-          </v-col>
-        </v-row>
-      </v-container>
+
+      <div style="overflow-y: auto; position: absolute; top: 0 !important; width: 100%; height:100%">
+        <v-container fluid id="main-container">
+          <v-row justify="center">
+            <v-col
+              align="center"
+              :style="{ 'max-width': $vuetify.breakpoint.thresholds.md + 'px' }"
+            >
+              <router-view />
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
     </v-main>
 
     <Footer></Footer>
@@ -39,14 +42,7 @@ import AnimatedBackground from "./components/AnimatedBackground.vue";
     AnimatedBackground,
   },
 })
-export default class App extends Vue {
-  public mounted() {
-    for (let i = 1; i < 10; i++)
-      setTimeout(() => {
-        window.scrollTo(0, 10);
-      }, 100 * i);
-  }
-}
+export default class App extends Vue {}
 </script>
 
 <style>
@@ -61,14 +57,18 @@ export default class App extends Vue {
 }
 
 html {
-  z-index: 0;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
+  overflow: hidden;
+  height: 100%;
 }
 
 body {
-  overflow-y: auto;
+  height: 100%;
+  position: relative;
+  touch-action: none;
+  transform: translate3d(0px, 0px, 0px);
+  transition: all 1000ms ease 0s;
 }
-</style>
 
+
+</style>
+  
