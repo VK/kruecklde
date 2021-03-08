@@ -21,7 +21,6 @@
       </div>
     </v-main>
 
-    <Footer></Footer>
   </v-app>
 </template>
 
@@ -30,7 +29,6 @@ import { Component, Vue } from "vue-property-decorator";
 import LoadingOverlay from "./components/LoadingOverlay.vue";
 import NavDrawer from "./components/NavDrawer.vue";
 import NavBar from "./components/NavBar.vue";
-import Footer from "./components/Footer.vue";
 import AnimatedBackground from "./components/AnimatedBackground.vue";
 @Component({
   name: "App",
@@ -38,7 +36,6 @@ import AnimatedBackground from "./components/AnimatedBackground.vue";
     LoadingOverlay,
     NavDrawer,
     NavBar,
-    Footer,
     AnimatedBackground,
   },
 })

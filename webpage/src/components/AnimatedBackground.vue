@@ -33,15 +33,17 @@ export default class AnimatedBackground extends Vue {
         onIdle: () => {
           if ("Idle" in this.animations && "Walking" in this.animations) {
             this.animations["Idle"].stop();
-            this.animations["Walking"].crossFadeTo(this.animations["Idle"], 1.0, true).play();
-            
+            this.animations["Walking"]
+              .crossFadeTo(this.animations["Idle"], 1.0, true)
+              .play();
           }
         },
         onWalk: () => {
           if ("Idle" in this.animations && "Walking" in this.animations) {
             this.animations["Walking"].stop();
-           this.animations["Idle"].crossFadeTo(this.animations["Walking"], 1.0, true).play();
-      
+            this.animations["Idle"]
+              .crossFadeTo(this.animations["Walking"], 1.0, true)
+              .play();
           }
         },
       },
@@ -78,7 +80,7 @@ export default class AnimatedBackground extends Vue {
       100
     );
     this.camera.position.set(-2, 2, 20);
-    this.camera.lookAt(new Three.Vector3(0, 8, 0));
+    this.camera.lookAt(new Three.Vector3(0, 7.5, 0));
   }
 
   private updateBackground() {
@@ -103,7 +105,8 @@ export default class AnimatedBackground extends Vue {
 
   public resize() {
     const newWidth = this.container?.parentElement?.clientWidth;
-    const newHeight = this.container?.parentElement?.clientHeight;
+    let newHeight = this.container?.parentElement?.clientHeight;
+    if (newHeight) newHeight = newHeight + 20;
 
     if (
       newHeight &&
