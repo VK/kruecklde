@@ -81,7 +81,7 @@ export default class AnimatedBackground extends Vue {
     );
     this.camera.position.set(-2, 2, 20);
     if (this.$device.mobile) {
-      this.camera.lookAt(new Three.Vector3(0, 6.4, 0));
+      this.camera.lookAt(new Three.Vector3(0, 6.0, 0));
     } else {
       this.camera.lookAt(new Three.Vector3(0, 7.8, 0));
     }
