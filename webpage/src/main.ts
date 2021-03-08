@@ -5,7 +5,9 @@ import router from './router'
 import vuetify from './plugins/vuetify';
 import i18n from './i18n'
 import store from "@/store";
-
+import device from "vue-device-detector"
+  
+Vue.use(device)
 Vue.config.productionTip = false
 
 const app = new Vue({

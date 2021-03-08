@@ -80,7 +80,11 @@ export default class AnimatedBackground extends Vue {
       100
     );
     this.camera.position.set(-2, 2, 20);
-    this.camera.lookAt(new Three.Vector3(0, 7.5, 0));
+    if (this.$device.mobile) {
+      this.camera.lookAt(new Three.Vector3(0, 7.0, 0));
+    } else {
+      this.camera.lookAt(new Three.Vector3(0, 7.8, 0));
+    }
   }
 
   private updateBackground() {
@@ -106,7 +110,7 @@ export default class AnimatedBackground extends Vue {
   public resize() {
     const newWidth = this.container?.parentElement?.clientWidth;
     let newHeight = this.container?.parentElement?.clientHeight;
-    if (newHeight) newHeight = newHeight + 20;
+    if (newHeight && this.$device.mobile) newHeight = newHeight + 20;
 
     if (
       newHeight &&
