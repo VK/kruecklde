@@ -5,7 +5,7 @@
     <NavBar @toggle-drawer="$refs.navDrawer.toggle()"></NavBar>
 
     <v-main style="position: relative">
-      <animated-background />
+      <external-background />
 
       <div style="overflow-y: auto; position: absolute; top: 0 !important; width: 100%; height:100%">
         <v-container fluid id="main-container">
@@ -29,14 +29,14 @@ import { Component, Vue } from "vue-property-decorator";
 import LoadingOverlay from "./components/LoadingOverlay.vue";
 import NavDrawer from "./components/NavDrawer.vue";
 import NavBar from "./components/NavBar.vue";
-import AnimatedBackground from "./components/AnimatedBackground.vue";
+import ExternalBackground from "./components/ExternalBackground.vue";
 @Component({
   name: "App",
   components: {
     LoadingOverlay,
     NavDrawer,
     NavBar,
-    AnimatedBackground,
+    ExternalBackground,
   },
 })
 export default class App extends Vue {}
@@ -49,8 +49,19 @@ export default class App extends Vue {}
 .v-navigation-drawer {
   background-color: var(--v-drawerbackground-base) !important;
 }
-.v-card {
-  background-color: var(--v-cardbackground-base) !important;
+.theme--dark.v-card  {
+  background-color: #1c1f1fbb !important;
+}
+.theme--light.v-card {
+
+  background-color: #ffffffdd !important;
+
+}
+
+.theme--dark.v-card.elevation-5 {
+    box-shadow: 0px 3px 5px -1px rgb(255 255 255 / 20%),
+     0px 5px 8px 0px rgb(255 255 255 / 14%),
+      0px 1px 14px 0px rgb(255 255 255 / 12%) !important;
 }
 
 html {
