@@ -15,7 +15,7 @@ module.exports = {
     disableHostCheck: true,
   },
   pwa: {
-    themeColor: '#47a64a',
+    themeColor: '#35d6d0',
     workboxOptions: {
       skipWaiting: true
     }

@@ -7,7 +7,15 @@
     <v-main style="position: relative">
       <external-background />
 
-      <div style="overflow-y: auto; position: absolute; top: 0 !important; width: 100%; height:100%">
+      <div
+        style="
+          overflow-y: auto;
+          position: absolute;
+          top: 0 !important;
+          width: 100%;
+          height: 100%;
+        "
+      >
         <v-container fluid id="main-container">
           <v-row justify="center">
             <v-col
@@ -20,7 +28,6 @@
         </v-container>
       </div>
     </v-main>
-
   </v-app>
 </template>
 
@@ -49,34 +56,40 @@ export default class App extends Vue {}
 .v-navigation-drawer {
   background-color: var(--v-drawerbackground-base) !important;
 }
-.theme--dark.v-card  {
+.theme--dark.v-card {
   background-color: #1c1f1fbb !important;
 }
 .theme--light.v-card {
-
   background-color: #ffffffdd !important;
-
 }
 
 .theme--dark.v-card.elevation-5 {
-    box-shadow: 0px 3px 5px -1px rgb(255 255 255 / 20%),
-     0px 5px 8px 0px rgb(255 255 255 / 14%),
-      0px 1px 14px 0px rgb(255 255 255 / 12%) !important;
+  box-shadow: 0px 3px 5px -1px rgb(255 255 255 / 20%),
+    0px 5px 8px 0px rgb(255 255 255 / 14%),
+    0px 1px 14px 0px rgb(255 255 255 / 12%) !important;
 }
 
 html {
   overflow: hidden;
   height: 100%;
 }
-
+/* 
 body {
   height: 100%;
   position: relative;
   touch-action: none;
   transform: translate3d(0px, 0px, 0px);
   transition: all 1000ms ease 0s;
+} */
+
+.v-toolbar__content {
+  color: #003a39;
 }
-
-
+.theme--dark.v-btn.v-btn--icon {
+  color: #003a39;
+}
+.theme--dark.v-icon {
+  color: #003a39 !important;
+}
 </style>
   

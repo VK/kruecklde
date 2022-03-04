@@ -15,7 +15,7 @@ export default new Vuetify({
         },
         themes: {
             light: {
-                primary: "#3bc4bc",
+                primary: "#35d6d0",
                 secondary: "#ff43bb",
                 accent: colors.shades.black,
                 error: colors.red.accent3,
@@ -24,7 +24,7 @@ export default new Vuetify({
                 cardbackground: "#ffffff",
             },
             dark: {
-                primary: "#3bc4bc",
+                primary: "#35d6d0",
                 secondary: "#ff35d5",
                 background: colors.shades.black,
                 drawerbackground: "#212626",
