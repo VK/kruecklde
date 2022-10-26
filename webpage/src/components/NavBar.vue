@@ -10,7 +10,7 @@
     <v-app-bar-nav-icon
       @click.stop="$emit('toggle-drawer')"
     ></v-app-bar-nav-icon>
-    <v-toolbar-title>Toolbar</v-toolbar-title>
+    <v-toolbar-title>krueckl.de</v-toolbar-title>
     <v-spacer></v-spacer>
 
     <v-menu
@@ -21,7 +21,7 @@
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn fab small color="primary lighten-1" v-bind="attrs" v-on="on">
-          <v-icon>mdi-screwdriver</v-icon>
+          <v-icon>mdi-application-cog-outline</v-icon>
         </v-btn>
       </template>
 

@@ -1,32 +1,43 @@
 <template>
   <v-navigation-drawer v-model="visible" app :clipped="$vuetify.breakpoint.lgAndUp">
     <v-list dense>
-      <v-list-item to="/">
+      <v-list-item to="/" :color="itemcolor()">
         <v-list-item-action>
-          <v-icon>mdi-bookmark</v-icon>
+          <v-icon color="secondary">mdi-bookmark</v-icon>
         </v-list-item-action>
         <v-list-item-content>
-          <v-list-item-title>Home</v-list-item-title>
+          <v-list-item-title varian>Home</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
-      <v-list-item to="/about">
+      <!-- <v-list-item to="/about" :color="itemcolor()">
         <v-list-item-action>
-          <v-icon>mdi-bookmark</v-icon>
+          <v-icon  color="secondary">mdi-bookmark</v-icon>
         </v-list-item-action>
         <v-list-item-content>
           <v-list-item-title>About</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
-      <v-list-item to="/test">
+      <v-list-item to="/test" :color="itemcolor()">
         <v-list-item-action>
-          <v-icon>mdi-bookmark</v-icon>
+          <v-icon  color="secondary">mdi-test-tube</v-icon>
         </v-list-item-action>
         <v-list-item-content>
           <v-list-item-title>Test</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
+
+
+      <v-list-item to="/test" :color="itemcolor()">
+        <v-list-item-action>
+          <v-icon  color="secondary">mdi-github</v-icon>
+        </v-list-item-action>
+        <v-list-item-content>
+          <v-list-item-title>Test</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item> -->
+
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -36,6 +47,11 @@ import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class NavDrawer extends Vue {
   public visible = false;
+
+  public itemcolor(): string {
+    return (this.$vuetify.theme.dark) ? "secondary accent-4": "secondary darken-4";
+  }
+
   public toggle(): void {
     this.visible = !this.visible;
   }

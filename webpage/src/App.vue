@@ -37,6 +37,8 @@ import LoadingOverlay from "./components/LoadingOverlay.vue";
 import NavDrawer from "./components/NavDrawer.vue";
 import NavBar from "./components/NavBar.vue";
 import ExternalBackground from "./components/ExternalBackground.vue";
+
+
 @Component({
   name: "App",
   components: {
@@ -50,6 +52,7 @@ export default class App extends Vue {}
 </script>
 
 <style>
+
 .v-application {
   background-color: var(--v-background-base) !important;
 }

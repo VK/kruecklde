@@ -6,6 +6,8 @@ import vuetify from './plugins/vuetify';
 import i18n from './i18n'
 import store from "@/store";
 import device from "vue-device-detector"
+import "@fontsource/roboto";
+
   
 Vue.use(device)
 Vue.config.productionTip = false
