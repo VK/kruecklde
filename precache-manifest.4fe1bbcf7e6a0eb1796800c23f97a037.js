@@ -24,7 +24,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/a656661ae40561bdebef83ff2e18971b.svg"
   },
   {
-    "revision": "8065fe89d4cea6d64543",
+    "revision": "f24a3fda457298518716",
     "url": "/css/app.b431f7a6.css"
   },
   {
@@ -80,16 +80,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fonts/roboto-vietnamese-400-normal.ca3b09b6.woff2"
   },
   {
-    "revision": "f1a53d7f0c685654b633ba8629969433",
+    "revision": "52db60329c36a498e5a2e775d4c09148",
     "url": "/index.html"
   },
   {
-    "revision": "09a2ae235136fbcae070",
-    "url": "/js/about.c922bf28.js"
+    "revision": "55acc4eb74cc6ad1f8d2",
+    "url": "/js/about.cc09726a.js"
   },
   {
-    "revision": "8065fe89d4cea6d64543",
-    "url": "/js/app.143671a8.js"
+    "revision": "f24a3fda457298518716",
+    "url": "/js/app.afa03079.js"
   },
   {
     "revision": "86aa205b7b42629609f9",
@@ -100,7 +100,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/main.js"
   },
   {
-    "revision": "f78b9dd1560444b724cb4e115c00b1b2",
+    "revision": "0eda8c1707f05b8e5c980c1c94ebda79",
     "url": "/manifest.json"
   },
   {
