@@ -5140,8 +5140,8 @@ function drawImpText(ctx, offx, offy, dark) {
 
 function addImpElement(o, canvID, dark) {
 
-  const x = Math.floor(Math.random() * 240);
-  const y = Math.floor(Math.random() * 180);
+  const x = Math.floor(Math.random() * 250)-5;
+  const y = Math.floor(Math.random() * 190)-5;
 
 
   const width = 20;
@@ -5165,10 +5165,11 @@ function addImpElement(o, canvID, dark) {
 
 function drawAnschrift(o, dark) {
 
-
+  
 
   for (let i = 0; i < 2000; i++) {
-    addImpElement(o, i, dark);
+
+    setTimeout( () => addImpElement(o, i, dark), i*2);
   }
 
 }

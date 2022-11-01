@@ -20,8 +20,10 @@ import { drawAnschrift } from "./../impressum";
 @Component
 export default class About extends Vue {
   mounted() {
+    const obj = this.$refs.abox;
+    const dark = this.$vuetify.theme.dark;
 
-    drawAnschrift(this.$refs.abox, this.$vuetify.theme.dark);
+    setTimeout(() => drawAnschrift(obj, dark), 100);
   }
 }
 </script>
