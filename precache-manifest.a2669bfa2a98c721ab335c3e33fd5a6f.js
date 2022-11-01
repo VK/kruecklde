@@ -12,6 +12,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/4dee7332180644b562a2.jpg"
   },
   {
+    "revision": "2ba7afe55c09d2106fbf65813e28f98d",
+    "url": "/CNAME"
+  },
+  {
     "revision": "70610664823701a3341a6e3db0af2fa7",
     "url": "/RobotExpressive.glb"
   },
@@ -24,7 +28,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/a656661ae40561bdebef83ff2e18971b.svg"
   },
   {
-    "revision": "b42682aeb766765d604a",
+    "revision": "3f167463759b5292ecc3",
     "url": "/css/app.b431f7a6.css"
   },
   {
@@ -80,20 +84,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fonts/roboto-vietnamese-400-normal.ca3b09b6.woff2"
   },
   {
-    "revision": "cb942a7f38d172de2812fbb1497920b2",
+    "revision": "79a66aed69eb7c62f907637b1f1cd47b",
     "url": "/index.html"
   },
   {
-    "revision": "b42682aeb766765d604a",
-    "url": "/js/app.b21ca8eb.js"
+    "revision": "3f167463759b5292ecc3",
+    "url": "/js/app.bac88cf0.js"
   },
   {
     "revision": "86aa205b7b42629609f9",
     "url": "/js/chunk-vendors.7cc925fe.js"
   },
   {
-    "revision": "fea4290ffec19c411257",
-    "url": "/js/impressum.423c3db9.js"
+    "revision": "6f6e3a8f17b650a1c867",
+    "url": "/js/impressum.ad7a13cb.js"
   },
   {
     "revision": "1031dd06641689149e7b98d4035f35a4",
