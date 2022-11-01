@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.4fe1bbcf7e6a0eb1796800c23f97a037.js"
+  "/precache-manifest.cb7040ba41bbc4bcb1d02946e7a8794a.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "krueckl.de"});
