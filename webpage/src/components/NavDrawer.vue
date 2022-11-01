@@ -10,15 +10,15 @@
         </v-list-item-content>
       </v-list-item>
 
-      <!-- <v-list-item to="/about" :color="itemcolor()">
+      <v-list-item to="/impressum" :color="itemcolor()">
         <v-list-item-action>
           <v-icon  color="secondary">mdi-bookmark</v-icon>
         </v-list-item-action>
         <v-list-item-content>
-          <v-list-item-title>About</v-list-item-title>
+          <v-list-item-title>Impressum</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-
+<!-- 
       <v-list-item to="/test" :color="itemcolor()">
         <v-list-item-action>
           <v-icon  color="secondary">mdi-test-tube</v-icon>
