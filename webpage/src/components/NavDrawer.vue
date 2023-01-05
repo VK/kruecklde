@@ -6,9 +6,19 @@
           <v-icon color="secondary">mdi-bookmark</v-icon>
         </v-list-item-action>
         <v-list-item-content>
-          <v-list-item-title varian>Home</v-list-item-title>
+          <v-list-item-title varian>Index</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
+
+      <v-list-item to="/home" :color="itemcolor()" v-if="$store.state.athome">
+        <v-list-item-action>
+          <v-icon  color="secondary">mdi-bookmark</v-icon>
+        </v-list-item-action>
+        <v-list-item-content>
+          <v-list-item-title>Home</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
 
       <v-list-item to="/impressum" :color="itemcolor()">
         <v-list-item-action>
@@ -18,25 +28,7 @@
           <v-list-item-title>Impressum</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-<!-- 
-      <v-list-item to="/test" :color="itemcolor()">
-        <v-list-item-action>
-          <v-icon  color="secondary">mdi-test-tube</v-icon>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title>Test</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
 
-
-      <v-list-item to="/test" :color="itemcolor()">
-        <v-list-item-action>
-          <v-icon  color="secondary">mdi-github</v-icon>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title>Test</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item> -->
 
     </v-list>
   </v-navigation-drawer>

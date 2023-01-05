@@ -1,11 +1,13 @@
 import { RouteConfig } from 'vue-router'
+import Index from '../views/Index.vue'
 import Home from '../views/Home.vue'
+import MQTT from '../views/MQTT.vue'
 
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
+    name: 'Index',
+    component: Index,
     meta: {
       title: 'krueckl.de',
       metaTags: [
@@ -16,6 +18,21 @@ const routes: Array<RouteConfig> = [
       ]
     }
   },
+
+  {
+    path: '/home',
+    name: 'Home',
+    component: Home,
+    meta: {
+      title: 'Home control',
+      metaTags: [
+        {
+          property: 'home',
+        }
+      ]
+    }
+  },
+
   {
     path: '/impressum',
     name: 'Impressum',

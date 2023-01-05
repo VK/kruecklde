@@ -4,5 +4,8 @@
     "hello": "Hallo {user}!",
     "darktheme": "Dunkles Farbschema",
     "message": "Nachricht",
-    "title": "Titel"
+    "title": "Titel",
+
+    "rollos": "Rollos",
+    "lichter": "Lichter"
 }

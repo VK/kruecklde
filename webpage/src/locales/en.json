@@ -4,5 +4,8 @@
     "hello": "Hello {user}!",
     "darktheme": "Dark Theme",
     "message": "Message",
-    "title": "Title"
+    "title": "Title",
+
+    "rollos": "Blinds",
+    "lichter": "Lights"
 }
