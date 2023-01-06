@@ -1,7 +1,13 @@
 <template>
   <div class="home">
+    <v-card v-if="$store.state.mqtt.state !== 'connected'" class="pt-5 pb-5">
+      <v-btn  @click="$store.commit('connectMQTT')" >
+        Connect
+      </v-btn>
+    
+    </v-card>
 
-    <v-card>
+    <v-card v-if="$store.state.mqtt.state === 'connected'">
       <h2 class="pt-2">{{ $t("rollos") }}</h2>
 
       <v-container>
@@ -30,7 +36,7 @@
       </v-container>
     </v-card>
 
-    <v-card class="mt-2">
+    <v-card class="mt-2" v-if="$store.state.mqtt.state === 'connected'">
       <h2 class="pt-2">{{ $t("lichter") }}</h2>
 
       <div v-for="(value, key) in $store.state.lichter" v-bind:key="key">

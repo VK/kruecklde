@@ -19,6 +19,12 @@ let store = new Vuex.Store<State>({
       state.mqtt.client.onMessageArrived = (message: any) => {
         store.commit("onMQTTmessage", message);
       };
+      state.mqtt.client.onConnectionLost = (responseObject: any) => {
+        if (responseObject.errorCode !== 0) {
+          state.mqtt.state = "?";
+        }
+      };
+
 
       var options: any = {
         useSSL: true,
@@ -29,7 +35,7 @@ let store = new Vuex.Store<State>({
           state.mqtt.state = "connected";
         },
         onFailure: (error: any) => {
-          state.mqtt.state = "error";
+          state.mqtt.state = "?";
         }
       }
       state.mqtt.client.connect(options);
@@ -78,7 +84,7 @@ let store = new Vuex.Store<State>({
         { value: oldstate.lichter[name].value, updating: true }
       );
       state.mqtt.client.publish(
-        "command/licht-" + name, (message.value) ? "on": "off", 
+        "command/licht-" + name, (message.value) ? "on" : "off",
       )
     },
 
@@ -88,7 +94,7 @@ let store = new Vuex.Store<State>({
       const payload = message.value.toString();
 
       state.mqtt.client.publish(
-        "command/rollo-"+key, payload
+        "command/rollo-" + key, payload
       )
     },
 
