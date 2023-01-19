@@ -37,6 +37,9 @@ export const state = {
     rollos: {} as { [name: string]: any },
     lichter: {} as { [name: string]: any },
 
+    humidity: [] as any,
+    temp: [] as any
+
 
 
 }

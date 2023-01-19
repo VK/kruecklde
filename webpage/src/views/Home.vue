@@ -1,10 +1,7 @@
 <template>
   <div class="home">
     <v-card v-if="$store.state.mqtt.state !== 'connected'" class="pt-5 pb-5">
-      <v-btn  @click="$store.commit('connectMQTT')" >
-        Connect
-      </v-btn>
-    
+      <v-btn @click="$store.commit('connectMQTT')"> Connect </v-btn>
     </v-card>
 
     <v-card v-if="$store.state.mqtt.state === 'connected'">
@@ -24,14 +21,20 @@
         </v-row>
         <v-row>
           <v-col>
-            <v-btn @click="$store.commit('setrollos', 'up')" color="primary"> Up </v-btn>
+            <v-btn @click="$store.commit('setrollos', 'up')" color="primary">
+              Up
+            </v-btn>
           </v-col>
           <v-col>
-            <v-btn @click="$store.commit('setrollos', 'down')" color="primary"> Down </v-btn>
+            <v-btn @click="$store.commit('setrollos', 'down')" color="primary">
+              Down
+            </v-btn>
           </v-col>
           <v-col>
-            <v-btn @click="$store.commit('setrollos', 'cat')" color="primary"> Cat </v-btn>
-          </v-col>          
+            <v-btn @click="$store.commit('setrollos', 'cat')" color="primary">
+              Cat
+            </v-btn>
+          </v-col>
         </v-row>
       </v-container>
     </v-card>
@@ -49,14 +52,39 @@
         ></v-switch>
       </div>
     </v-card>
+
+
+    <v-card class="mt-2" v-if="$store.state.mqtt.state === 'connected'">
+      <Plotly :data="$store.state.temp" :layout="plotlayout"></Plotly>
+    </v-card>
+
+    <v-card class="mt-2" v-if="$store.state.mqtt.state === 'connected'">
+      <Plotly :data="$store.state.humidity" :layout="plotlayout"></Plotly>
+    </v-card>
   </div>
 </template>
 
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-@Component
+import { Plotly } from "vue-plotly";
+
+@Component({
+  components: {
+    Plotly,
+  },
+})
 export default class Home extends Vue {
+  plotlayout = {
+    margin: { l: 40, r: 20, t: 20, b: 60 },
+    legend: {
+      yanchor: "top",
+      y: 0.99,
+      xanchor: "left",
+      x: 0.01,
+    },
+  };
+
   setlight(key: string, value: boolean) {
     this.$store.commit("setlight", { key: key, value: value });
   }
@@ -66,8 +94,8 @@ export default class Home extends Vue {
   }
 
   mounted() {
-    if (this.$store.state.mqtt.state === "?" && this.$store.state.athome ) {
-      this.$store.commit('connectMQTT');
+    if (this.$store.state.mqtt.state === "?" && this.$store.state.athome) {
+      this.$store.commit("connectMQTT");
     }
   }
 }
