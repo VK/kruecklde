@@ -14,6 +14,10 @@ try {
     if (config_json !== null) {
         mqttcfg = JSON.parse(config_json as string);
         athome = true;
+
+        if (window.location.hash != "#/home") {
+            window.location.hash = "#/home";
+        }
     }
 
 } catch { }

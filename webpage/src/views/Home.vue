@@ -85,6 +85,8 @@ export default class Home extends Vue {
         xanchor: "left",
         x: 0.01,
       },
+      xaxis: {fixedrange: true},
+      yaxis: {fixedrange: true}
     };
 
     if (this.$vuetify.theme.dark)

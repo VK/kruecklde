@@ -13,9 +13,9 @@
 function drawImpText(ctx, offx, offy, dark) {
   ctx.save();
   if (dark) {
-    ctx.fillStyle = "rgba(255,255,255,0.05)";
+    ctx.fillStyle = "rgba(255,255,255,0.1)";
   } else {
-    ctx.fillStyle = "rgba(0,0,0,0.05)";
+    ctx.fillStyle = "rgba(0,0,0,0.1)";
   }
   ctx.miterLimit = 4;
   ctx.translate(- offx, - offy);
@@ -5140,12 +5140,12 @@ function drawImpText(ctx, offx, offy, dark) {
 
 function addImpElement(o, canvID, dark) {
 
-  const x = Math.floor(Math.random() * 250)-5;
-  const y = Math.floor(Math.random() * 190)-5;
+  const x = Math.floor(Math.random() * 250)-10;
+  const y = Math.floor(Math.random() * 190)-10;
 
 
-  const width = 20;
-  const height = 20;
+  const width = 40;
+  const height = 40;
 
 
 
@@ -5167,9 +5167,9 @@ function drawAnschrift(o, dark) {
 
   
 
-  for (let i = 0; i < 2000; i++) {
+  for (let i = 0; i < 200; i++) {
 
-    setTimeout( () => addImpElement(o, i, dark), i*2);
+    setTimeout( () => addImpElement(o, i, dark), i*20);
   }
 
 }
