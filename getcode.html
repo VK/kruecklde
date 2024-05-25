@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MQTT Config</title>
+    <style>
+        .config-section {
+            margin-bottom: 20px;
+        }
+        .config-section label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .config-section input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        #outputURL {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="config-section">
+        <label for="host">Host:</label>
+        <input type="text" id="host" placeholder="Enter MQTT Host">
+    </div>
+    <div class="config-section">
+        <label for="port">Port:</label>
+        <input type="number" id="port" placeholder="Enter MQTT Port" value="8884">
+    </div>
+    <div class="config-section">
+        <label for="clientID">Client ID:</label>
+        <input type="text" id="clientID" placeholder="Enter Client ID" value="mobile">
+    </div>
+    <div class="config-section">
+        <label for="user">User:</label>
+        <input type="text" id="user" placeholder="Enter MQTT User">
+    </div>
+    <div class="config-section">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter MQTT Password">
+    </div>
+    <div id="outputURL">Generated URL will appear here...</div>
+
+    <script>
+        let mqttcfg = {
+            host: "",
+            port: 1234,
+            clientID: "?",
+            user: "",
+            password: ""
+        };
+
+        function create_UUID() {
+            let dt = new Date().getTime();
+            const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                const r = (dt + Math.random()*16)%16 | 0;
+                dt = Math.floor(dt/16);
+                return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+            });
+            return uuid;
+        }
+
+        function createConfigURL(host, port, clientID, user, password) {
+            const baseURL = "https://www.krueckl.de";
+            const config = {
+                host: host,
+                port: port,
+                clientID: clientID,
+                user: user,
+                password: password
+            };
+            const configString = JSON.stringify(config);
+            const encodedConfig = window.btoa(configString);
+            return `${baseURL}?${encodedConfig}`;
+        }
+
+        function updateURL() {
+            const host = document.getElementById('host').value;
+            const port = document.getElementById('port').value;
+            const clientID = document.getElementById('clientID').value || create_UUID();
+            const user = document.getElementById('user').value;
+            const password = document.getElementById('password').value;
+
+            const generatedURL = createConfigURL(host, port, clientID, user, password);
+            document.getElementById('outputURL').textContent = generatedURL;
+        }
+
+        document.getElementById('host').addEventListener('input', updateURL);
+        document.getElementById('port').addEventListener('input', updateURL);
+        document.getElementById('clientID').addEventListener('input', updateURL);
+        document.getElementById('user').addEventListener('input', updateURL);
+        document.getElementById('password').addEventListener('input', updateURL);
+
+        window.onload = function() {
+            const queryString = window.location.search;
+            if (queryString !== null) {
+                try {
+                    let url = window.atob(queryString.replace("?", ""));
+                    let cfg = JSON.parse(url);
+                    cfg["clientID"] = create_UUID();
+                    localStorage.setItem("mqttcfg", JSON.stringify(cfg));
+                } catch (e) {
+                    console.error("Error decoding and parsing configuration", e);
+                }
+            }
+
+            try {
+                let config_json = localStorage.getItem("mqttcfg");
+                if (config_json !== null) {
+                    mqttcfg = JSON.parse(config_json);
+                    document.getElementById('host').value = mqttcfg.host;
+                    document.getElementById('port').value = mqttcfg.port;
+                    document.getElementById('clientID').value = mqttcfg.clientID;
+                    document.getElementById('user').value = mqttcfg.user;
+                    document.getElementById('password').value = mqttcfg.password;
+                    updateURL();
+                    if (window.location.hash !== "#/home") {
+                        window.location.hash = "#/home";
+                    }
+                }
+            } catch (e) {
+                console.error("Error loading configuration from localStorage", e);
+            }
+        };
+    </script>
+</body>
+</html>
